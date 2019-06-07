@@ -1,0 +1,33 @@
+file:
+  res_ID: 11
+  url: /etc/res.ini
+  size: 1Gb
+  owner: me
+  content: |-
+    exo_dns_recordq
+    bigip_qkview:
+        dest:  # required. Destination on your local filesystem when you want to save the qkview.
+        server: undefined # required. The BIG-IP host.,You may omit this option by setting the environment variable C(F5_SERVER).
+        user: undefined # required. The username to connect to the BIG-IP with. This user must have administrative privileges on the device.,You may omit this option by setting the environment variable C(F5_USER).
+        password: undefined # required. The password for the user account used to connect to the BIG-IP.,You may omit this option by setting the environment variable C(F5_PASSWORD).
+        max_file_size: 0 # not required. Max file size, in bytes, of the qkview to create. By default, no max file size is specified.
+        force: true # not required. If C(no), the file will only be transferred if the destination does not exist.
+        server_port: 443 # not required. The BIG-IP server port.,You may omit this option by setting the environment variable C(F5_SERVER_PORT).
+        asm_request_log: false # not required. When C(True), includes the ASM request log data. When C(False), excludes the ASM request log data.
+        filename: localhost.localdomain.qkview # not required. Name of the qkview to create on the remote BIG-IP.
+        exclude_core: false # not required. Exclude core files from the qkview.
+        complete_information: false # not required. Include complete information in the qkview.
+        provider: null # not required. A dict object containing connection details.
+        exclude: all # not required. choices: all;audit;secure;bash_history. Exclude various file from the qkview.
+        validate_certs: true # not required. If C(no), SSL certificates are not validated. Use this only on personally controlled sites using self-signed certificates.,You may omit this option by setting the environment variable C(F5_VALIDATE_CERTS).
+ami:
+  url: ami://123235425323423
+  region: eu-1
+  created: 19-03-2001
+ec2:
+  url: ec2://eu-1/ec2-1231313123131
+  created: 19-03-2001
+consul_kv:
+  url: consul_kv://localhost:8500/some-path/key-name
+  content: "123"
+
